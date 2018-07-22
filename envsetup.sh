@@ -548,13 +548,13 @@ function print_lunch_menu()
     echo ""
     tput setaf 6;
     tput bold;
-
-    echo "           ▌ ▐·▪   ▄▄▄·▄▄▄ .▄▄▄        .▄▄ ·     "
-    echo "          ▪█·█▌██ ▐█ ▄█▀▄.▀·▀▄ █·▪     ▐█ ▀.     "
-    echo "          ▐█▐█•▐█· ██▀·▐▀▀▪▄▐▀▀▄  ▄█▀▄ ▄▀▀▀█▄    "
-    echo "           ███ ▐█▌▐█▪·•▐█▄▄▌▐█•█▌▐█▌.▐▌▐█▄▪▐█    "
-    echo "          . ▀  ▀▀▀.▀    ▀▀▀ .▀  ▀ ▀█▄▀▪ ▀▀▀▀     "
-    echo "              Feel the venom in your vein        "
+    echo "  _____                             _   _   ___ "
+    echo " | ____|   ___    ___   _ __ ___   | | | | |_ _|"
+    echo " |  _|    / __|  / _ \ | '_ ' _ \  | | | |  | | "
+    echo " | |___  | (__  |  __/ | | | | | | | |_| |  | | "
+    echo " |_____|  \___|  \___| |_| |_| |_|  \___/  |___|"
+	echo "													"
+    echo "           Feel my hands in your hair :)        "
     tput sgr0;
     echo ""
     echo "              Welcome to the device menu           "

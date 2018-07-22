@@ -699,15 +699,16 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
 
   system_progress = 0.75
 
-  script.Print("******************************************");
-  script.Print("*     _   ___              ____  ____    *");
-  script.Print("*    | | / (_)__  ___ ____/ __ \/ __/    *");
-  script.Print("*    | |/ / / _ \/ -_) __/ /_/ /\ \      *");
-  script.Print("*    |___/_/ .__/\__/_/  \____/___/      *");
-  script.Print("*         /_/   Feel the venom           *");
-  script.Print("*                in your vein            *");
-  script.Print("*                                        *");
-  script.Print("******************************************");
+  script.Print("****************************************************");
+  script.Print("*   _____                             _   _   ___  *");
+  script.Print("*  | ____|   ___    ___   _ __ ___   | | | | |_ _| *");
+  script.Print("*  |  _|    / __|  / _ \ | '_ ' _ \  | | | |  | |  *");
+  script.Print("*  | |___  | (__  |  __/ | | | | | | | |_| |  | |  *");
+  script.Print("*  |_____|  \___|  \___| |_| |_| |_|  \___/  |___| *");
+  script.Print("*                                                  *");
+  script.Print("*          Feel my hands in your hair :)           *");
+  script.Print("****************************************************");
+  
   if GetBuildProp("ro.viper.version", OPTIONS.info_dict) is not None:
     buildid = GetBuildProp("ro.viper.version", OPTIONS.info_dict)
     buildidn = GetBuildProp("ro.build.id", OPTIONS.info_dict)

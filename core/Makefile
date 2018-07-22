@@ -2239,17 +2239,13 @@ poison: otapackage
 	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(VIPER_TARGET_PACKAGE)
 	$(hide) $(MD5SUM) $(VIPER_TARGET_PACKAGE) > $(VIPER_TARGET_PACKAGE).md5sum
 	@echo -e ${CL_CYN}""${CL_CYN}
-	@echo -e ${CL_CYN}" ██▒   █▓ ██▓ ██▓███  ▓█████  ██▀███   ▒█████    ██████     ██▓███   ██▀███   ▒█████   ▄▄▄██▀▀▀▓█████  ▄████▄  ▄▄▄█████▓ "${CL_CYN}
-	@echo -e ${CL_CYN}"▓██░   █▒▓██▒▓██░  ██▒▓█   ▀ ▓██ ▒ ██▒▒██▒  ██▒▒██    ▒    ▓██░  ██▒▓██ ▒ ██▒▒██▒  ██▒   ▒██   ▓█   ▀ ▒██▀ ▀█  ▓  ██▒ ▓▒ "${CL_CYN}
-	@echo -e ${CL_CYN}" ▓██  █▒░▒██▒▓██░ ██▓▒▒███   ▓██ ░▄█ ▒▒██░  ██▒░ ▓██▄      ▓██░ ██▓▒▓██ ░▄█ ▒▒██░  ██▒   ░██   ▒███   ▒▓█    ▄ ▒ ▓██░ ▒░ "${CL_CYN}
-	@echo -e ${CL_CYN}"  ▒██ █░░░██░▒██▄█▓▒ ▒▒▓█  ▄ ▒██▀▀█▄  ▒██   ██░  ▒   ██▒   ▒██▄█▓▒ ▒▒██▀▀█▄  ▒██   ██░▓██▄██▓  ▒▓█  ▄ ▒▓▓▄ ▄██▒░ ▓██▓ ░  "${CL_CYN}
-	@echo -e ${CL_CYN}"   ▒▀█░  ░██░▒██▒ ░  ░░▒████▒░██▓ ▒██▒░ ████▓▒░▒██████▒▒   ▒██▒ ░  ░░██▓ ▒██▒░ ████▓▒░ ▓███▒   ░▒████▒▒ ▓███▀ ░  ▒██▒ ░  "${CL_CYN}
-	@echo -e ${CL_CYN}"   ░ ▐░  ░▓  ▒▓▒░ ░  ░░░ ▒░ ░░ ▒▓ ░▒▓░░ ▒░▒░▒░ ▒ ▒▓▒ ▒ ░   ▒▓▒░ ░  ░░ ▒▓ ░▒▓░░ ▒░▒░▒░  ▒▓▒▒░   ░░ ▒░ ░░ ░▒ ▒  ░  ▒ ░░    "${CL_CYN}
-	@echo -e ${CL_CYN}"   ░ ░░   ▒ ░░▒ ░      ░ ░  ░  ░▒ ░ ▒░  ░ ▒ ▒░ ░ ░▒  ░ ░   ░▒ ░       ░▒ ░ ▒░  ░ ▒ ▒░  ▒ ░▒░    ░ ░  ░  ░  ▒       ░     "${CL_CYN}
-	@echo -e ${CL_CYN}"     ░░   ▒ ░░░          ░     ░░   ░ ░ ░ ░ ▒  ░  ░  ░     ░░         ░░   ░ ░ ░ ░ ▒   ░ ░ ░      ░   ░          ░       "${CL_CYN}
-	@echo -e ${CL_CYN}"      ░   ░              ░  ░   ░         ░ ░        ░                 ░         ░ ░   ░   ░      ░  ░░ ░                "${CL_CYN}
-	@echo -e ${CL_CYN}"     ░                                                                                                ░                  "${CL_CYN}
-	@echo -e ${CL_CYN}"                                              Feel the venom in your vein                                                "${CL_CYN}
+	@echo -e ${CL_CYN}"  _____                             _   _   ___ 	"${CL_CYN}
+	@echo -e ${CL_CYN}" | ____|   ___    ___   _ __ ___   | | | | |_ _|"${CL_CYN}
+	@echo -e ${CL_CYN}" |  _|    / __|  / _ \ | '_ ' _ \  | | | |  | |	"${CL_CYN}
+	@echo -e ${CL_CYN}" | |___  | (__  |  __/ | | | | | | | |_| |  | |	"${CL_CYN}
+	@echo -e ${CL_CYN}" |_____|  \___|  \___| |_| |_| |_|  \___/  |___|	"${CL_CYN}
+	@echo -e ${CL_CYN}""${CL_CYN}
+	@echo -e ${CL_CYN}"          Feel my hands in your hair :)          "${CL_CYN}
 	@echo -e ${CL_CYN}""${CL_CYN}
 	@echo -e ${CL_CYN}"===================================================-Package complete-===================================================="${CL_RST}
 	@echo -e ${CL_CYN}"File   : "${CL_MAG} $(PRODUCT_OUT)/$(VIPER_VERSION).zip${CL_RST}
