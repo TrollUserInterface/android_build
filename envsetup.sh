@@ -24,7 +24,7 @@ Invoke ". build/envsetup.sh" from your shell to add the following functions to y
 
 EOF
 
-    __print_viper_functions_help
+    __print_ecem_functions_help
 
 cat <<EOF
 
@@ -36,7 +36,7 @@ Environment options:
 Look at the source to view more functions. The complete list is:
 EOF
     T=$(gettop)
-    for i in `cat $T/build/envsetup.sh $T/vendor/viper/build/envsetup.sh | sed -n "/^[[:blank:]]*function /s/function \([a-z_]*\).*/\1/p" | sort | uniq`; do
+    for i in `cat $T/build/envsetup.sh $T/vendor/ecem/build/envsetup.sh | sed -n "/^[[:blank:]]*function /s/function \([a-z_]*\).*/\1/p" | sort | uniq`; do
       echo "$i"
     done | column
 }
@@ -46,8 +46,8 @@ function build_build_var_cache()
 {
     T=$(gettop)
     # Grep out the variable names from the script.
-    cached_vars=`cat $T/build/envsetup.sh $T/vendor/viper/build/envsetup.sh | tr '()' '  ' | awk '{for(i=1;i<=NF;i++) if($i~/get_build_var/) print $(i+1)}' | sort -u | tr '\n' ' '`
-    cached_abs_vars=`cat $T/build/envsetup.sh $T/vendor/viper/build/envsetup.sh | tr '()' '  ' | awk '{for(i=1;i<=NF;i++) if($i~/get_abs_build_var/) print $(i+1)}' | sort -u | tr '\n' ' '`
+    cached_vars=`cat $T/build/envsetup.sh $T/vendor/ecem/build/envsetup.sh | tr '()' '  ' | awk '{for(i=1;i<=NF;i++) if($i~/get_build_var/) print $(i+1)}' | sort -u | tr '\n' ' '`
+    cached_abs_vars=`cat $T/build/envsetup.sh $T/vendor/ecem/build/envsetup.sh | tr '()' '  ' | awk '{for(i=1;i<=NF;i++) if($i~/get_abs_build_var/) print $(i+1)}' | sort -u | tr '\n' ' '`
     # Call the build system to dump the "<val>=<value>" pairs as a shell script.
     build_dicts_script=`\cd $T; export CALLED_FROM_SETUP=true; export BUILD_SYSTEM=build/core; \
                         command make --no-print-directory -f build/core/config.mk \
@@ -133,17 +133,17 @@ function check_product()
         return
     fi
 
-    if (echo -n $1 | grep -q -e "^viper_") ; then
-        VIPER_BUILD=$(echo -n $1 | sed -e 's/^viper_//g')
-        export BUILD_NUMBER=$( (date +%s%N ; echo $VIPER_BUILD; hostname) | openssl sha1 | sed -e 's/.*=//g; s/ //g' | cut -c1-10 )
-    elif (echo -n $1 | grep -q -e "^viper_") ; then
-        # Fall back to viper_<product>
-        VIPER_BUILD=$(echo -n $1 | sed -e 's/^viper_//g')
-        export BUILD_NUMBER=$( (date +%s%N ; echo $VIPER_BUILD; hostname) | openssl sha1 | sed -e 's/.*=//g; s/ //g' | cut -c1-10 )
+    if (echo -n $1 | grep -q -e "^ecem_") ; then
+        ECEM_BUILD=$(echo -n $1 | sed -e 's/^ecem_//g')
+        export BUILD_NUMBER=$( (date +%s%N ; echo $ECEM_BUILD; hostname) | openssl sha1 | sed -e 's/.*=//g; s/ //g' | cut -c1-10 )
+    elif (echo -n $1 | grep -q -e "^ecem_") ; then
+        # Fall back to ecem_<product>
+        ECEM_BUILD=$(echo -n $1 | sed -e 's/^ecem_//g')
+        export BUILD_NUMBER=$( (date +%s%N ; echo $ECEM_BUILD; hostname) | openssl sha1 | sed -e 's/.*=//g; s/ //g' | cut -c1-10 )
     else
-        VIPER_BUILD=
+        ECEM_BUILD=
     fi
-    export VIPER_BUILD
+    export ECEM_BUILD
 
         TARGET_PRODUCT=$1 \
         TARGET_BUILD_VARIANT= \
@@ -572,7 +572,7 @@ function print_lunch_menu()
         i=$(($i+1))
     done | column
 
-    if [ "z${VIPER_DEVICES_ONLY}" != "z" ]; then
+    if [ "z${ECEM_DEVICES_ONLY}" != "z" ]; then
        echo "... and don't forget the bacon!"
     fi
 
@@ -590,7 +590,7 @@ function lunch()
         print_lunch_menu
         tput setaf 6;
         tput bold;
-        echo -n "Go ahead and pick a number or enter viper_device-userdebug ... "
+        echo -n "Go ahead and pick a number or enter ecem_device-userdebug ... "
         tput sgr0;
         read answer
     fi
@@ -637,13 +637,13 @@ function lunch()
         # if we can't find a product, try to grab it off the CM github
         T=$(gettop)
         cd $T > /dev/null
-        vendor/viper/build/tools/roomservice.py $product
+        vendor/ecem/build/tools/roomservice.py $product
         cd - > /dev/null
         check_product $product
     else
         T=$(gettop)
         cd $T > /dev/null
-        vendor/viper/build/tools/roomservice.py $product true
+        vendor/ecem/build/tools/roomservice.py $product true
         cd - > /dev/null
     fi
 
@@ -1730,7 +1730,7 @@ unset f
 
 # Add completions
 check_bash_version && {
-    dirs="sdk/bash_completion vendor/viper/bash_completion"
+    dirs="sdk/bash_completion vendor/ecem/bash_completion"
     for dir in $dirs; do
     if [ -d ${dir} ]; then
         for f in `/bin/ls ${dir}/[a-z]*.bash 2> /dev/null`; do
@@ -1743,4 +1743,4 @@ check_bash_version && {
 
 export ANDROID_BUILD_TOP=$(gettop)
 
-. $ANDROID_BUILD_TOP/vendor/viper/build/envsetup.sh
+. $ANDROID_BUILD_TOP/vendor/ecem/build/envsetup.sh
