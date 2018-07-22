@@ -62,6 +62,6 @@ if [ -n "$BUILD_THUMBPRINT" ] ; then
 fi
 echo "ro.build.characteristics=$TARGET_AAPT_CHARACTERISTICS"
 
-echo "ro.viper.device=$VIPER_DEVICE"
+echo "ro.ecem.device=$ECEM_DEVICE"
 
 echo "# end build properties"
