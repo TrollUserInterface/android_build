@@ -193,7 +193,7 @@ FIND_LEAVES_EXCLUDES := $(addprefix --prune=, $(SCAN_EXCLUDE_DIRS) .repo .git)
 $(call project-set-path-variant,recovery,RECOVERY_VARIANT,bootable/recovery)
 
 -include vendor/extra/BoardConfigExtra.mk
--include vendor/viper/config/BoardConfigCM.mk
+-include vendor/ecem/config/BoardConfigCM.mk
 
 # The build system exposes several variables for where to find the kernel
 # headers:
@@ -667,10 +667,10 @@ else
 endif
 
 # Rules for QCOM targets
-include vendor/viper/build/core/qcom_target.mk
+include vendor/ecem/build/core/qcom_target.mk
 
 # Rules for MTK targets
-include vendor/viper/build/core/mtk_target.mk
+include vendor/ecem/build/core/mtk_target.mk
 
 # ###############################################################
 # Set up final options.
@@ -924,10 +924,10 @@ ifneq ($(TARGET_COPY_FILES_OVERRIDES),)
     PRODUCT_COPY_FILES := $(filter-out $(TARGET_COPY_FILES_OVERRIDES), $(PRODUCT_COPY_FILES))
 endif
 
-ifneq ($(VIPER_BUILD),)
+ifneq ($(ECEM_BUILD),)
 ## We need to be sure the global selinux policies are included
 ## last, to avoid accidental resetting by device configs
-$(eval include vendor/viper/sepolicy/sepolicy.mk)
+$(eval include vendor/ecem/sepolicy/sepolicy.mk)
 
 # Include any vendor specific config.mk file
 -include $(TOPDIR)vendor/*/build/core/config.mk
