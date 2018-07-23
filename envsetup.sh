@@ -545,7 +545,7 @@ function print_lunch_menu()
     local uname=$(uname)
     echo
 
-    echo ""
+    echo "                                                "
     tput setaf 6;
     tput bold;
     echo "  _____                             _   _   ___ "
@@ -553,16 +553,16 @@ function print_lunch_menu()
     echo " |  _|    / __|  / _ \ | '_ ' _ \  | | | |  | | "
     echo " | |___  | (__  |  __/ | | | | | | | |_| |  | | "
     echo " |_____|  \___|  \___| |_| |_| |_|  \___/  |___|"
-	echo "													"
+    echo "						  "							"
     echo "           Feel my hands in your hair :)        "
     tput sgr0;
-    echo ""
-    echo "              Welcome to the device menu           "
-    echo ""
+    echo "                                                "
+    echo "            Welcome to the device menu          "
+    echo "                                                "
     tput bold;
     echo " Below are all the devices currently available to be compiled "
     tput sgr0;
-    echo ""
+    echo "                                                "
 
     local i=1
     local choice
