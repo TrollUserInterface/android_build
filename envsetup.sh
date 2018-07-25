@@ -553,7 +553,7 @@ function print_lunch_menu()
     echo " |  _|    / __|  / _ \ | '_ ' _ \  | | | |  | | "
     echo " | |___  | (__  |  __/ | | | | | | | |_| |  | | "
     echo " |_____|  \___|  \___| |_| |_| |_|  \___/  |___|"
-    echo "						  "							"
+    echo "						  							"
     echo "           Feel my hands in your hair :)        "
     tput sgr0;
     echo "                                                "
